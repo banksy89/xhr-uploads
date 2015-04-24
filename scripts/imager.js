@@ -71,7 +71,7 @@
 
 		var xhr = new XMLHttpRequest();
 
-		if (xhr.upload && file.size <= 30000000000) {
+		if (xhr.upload && file.size <= 30000) {
 
 			var progressBarObj = $('#js-uploader-progress-'+instance);
 
