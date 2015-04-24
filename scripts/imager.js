@@ -75,7 +75,7 @@
 
 			var progressBarObj = $('#js-uploader-progress-'+instance);
 
-			// Progress listener
+			// Update the progress bar as per the current progress of upload
 			xhr.upload.addEventListener('progress', function (e) {
 
 				var percentage = parseInt(100-(e.loaded/e.total*100));
@@ -84,9 +84,10 @@
 
 			}, false);
 
-			// File upload response
+			// Our file upload response
 			xhr.onreadystatechange = function (e) {
-				
+					
+				// If complete we show our progress bar as complete
 				if (xhr.readyState == 4) {
 					progressBarObj.prop('value', 100);
 				}
@@ -113,7 +114,6 @@
 			var atts = e.target.attributes;
 			
 			// Take the attributes that define the uploader from the file input
-
 			type = (!!atts['data-type'].value ? atts['data-type'].value : null);
 
 			instance = (!!atts['data-instance'].value ? atts['data-instance'].value : null);
