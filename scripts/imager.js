@@ -1,4 +1,4 @@
-(function () {
+(function ($) {
 
 	/** 
 	 * The uploader instance
@@ -35,7 +35,7 @@
 	 * 
 	 * @param {String} output
 	 */
-	function renderPreview(output) {
+	function renderPreview (output) {
 		$('#js-uploader-preview-'+instance).append(output);
 	}
 
@@ -44,7 +44,7 @@
 	 *
 	 * @param {Object} file
 	 */
-	function filePreview(file) {
+	function filePreview (file) {
 
 		if (file.type.indexOf('image') == 0) {
 
@@ -67,7 +67,7 @@
 	 *
 	 * @param {Object} file
 	 */
-	function fileUpload(file) {
+	function fileUpload (file) {
 
 		var xhr = new XMLHttpRequest();
 
@@ -104,7 +104,7 @@
 	/**
 	 * Initialises our uploader!
 	 */
-	function init() {
+	function init () {
 
 		var uploaders = $('.js-uploader');
 
@@ -121,9 +121,9 @@
 			handleSelectFile(e);
 		});
 
-	}
+	};
 
 	// Go Go Go!
 	init();
 
-})();
+})(jQuery);
