@@ -100,7 +100,7 @@
 				}
 			}
 
-			// Upload to PHP AJAX
+			// Upload to our server side script
 			xhr.open('POST', 'upload.php', true);
 			xhr.setRequestHeader('XHR_FILENAME', file.name);
 			xhr.setRequestHeader('XHR_FILE_TYPE', type);
