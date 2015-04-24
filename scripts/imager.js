@@ -5,16 +5,23 @@
 	 * We are allowing multiple uploaders on a page so this changes on an uploader-by-uploader basis.
 	 * Defaulting to 1 as a single uploader
 	 * 
-	 * @var {String}
+	 * @var {Integer} instance
 	 */
 	var instance = 1;	
 
 	/**
 	 * The type of upload it is (categorised images etc. to handle on the server side end)
 	 *
-	 * @var {String}
+	 * @var {String} type
 	 */
 	var type = null;
+
+	/** 
+	 * Max File Limit
+	 *
+	 * @var {Integer} sizeLimit
+	 */
+	var sizeLimit = 30000;
 
 	/**
 	 * Hanldes the action upon selecting file(s)
@@ -71,7 +78,7 @@
 
 		var xhr = new XMLHttpRequest();
 
-		if (xhr.upload && file.size <= 30000) {
+		if (xhr.upload && file.size <= sizeLimit) {
 
 			var progressBarObj = $('#js-uploader-progress-'+instance);
 
